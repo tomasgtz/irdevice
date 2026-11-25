@@ -1,0 +1,83 @@
+{
+  "app": { "name": "IR Remote", "tagline": "Control your TV and air conditioner from your phone." },
+  "common": {
+    "back": "Back", "next": "Next", "skip": "Skip", "cancel": "Cancel", "save": "Save",
+    "delete": "Delete", "retry": "Retry", "done": "Done", "loading": "Loading…", "close": "Close",
+    "or": "or", "language": "Language", "spanish": "Español", "english": "English"
+  },
+  "auth": {
+    "welcomeTitle": "Welcome", "signIn": "Sign in", "signUp": "Create account", "signOut": "Sign out",
+    "name": "Name", "email": "Email", "password": "Password", "confirmPassword": "Confirm password",
+    "newPassword": "New password", "currentPassword": "Current password",
+    "noAccount": "Don't have an account?", "haveAccount": "Already have an account?", "forgot": "Forgot your password?",
+    "signInTitle": "Sign in", "signUpTitle": "Create your account",
+    "forgotTitle": "Reset your password", "forgotHelp": "Enter your email and we'll send you a link to choose a new password.",
+    "sendLink": "Send link", "linkSent": "If the email exists, we sent you a link. Check your inbox.",
+    "resetTitle": "New password", "resetSubmit": "Change password", "backToSignIn": "Back to sign in",
+    "passwordMin": "At least 8 characters", "passwordsDontMatch": "Passwords don't match"
+  },
+  "home": {
+    "title": "My devices", "hello": "Hi, {{name}}", "add": "Add device",
+    "emptyTitle": "No remotes yet", "emptyText": "Add your first TV or air conditioner to get started.",
+    "draft": "Setup incomplete", "continueSetup": "Continue setup", "offline": "Offline", "online": "Online"
+  },
+  "status": {
+    "online": "Device online", "offline": "Device offline", "checking": "Checking…",
+    "allOnline": "All online", "someOffline": "{{n}} offline", "noneOnline": "Offline",
+    "noNetwork": "No internet. Check your connection.", "since": "since {{time}}", "noDevices": "No devices"
+  },
+  "add": {
+    "title": "New device", "step": "Step {{n}} of 3",
+    "idTitle": "IR device ID", "idHelp": "Enter the ID printed on your IR device.",
+    "idLabel": "Device ID", "idPlaceholder": "e.g. IR-4F2A91", "idCheck": "Verify",
+    "typeTitle": "What do you want to control?", "tv": "Television", "ac": "Air conditioner",
+    "nameTitle": "Give it a name", "nameLabel": "Name", "namePlaceholder": "e.g. Bedroom AC",
+    "suggestions": "Suggestions", "create": "Create and set up"
+  },
+  "setup": {
+    "title": "Setup", "progress": "{{n}} of {{total}}", "start": "Start capture",
+    "listening": "Waiting for the signal…", "listeningHelp": "Point your original remote at the IR device and press the button.",
+    "success": "Signal captured!", "failed": "No signal received", "tryAgain": "Try again",
+    "instruction": "Press the \"{{action}}\" button on your original remote control, pointing at the IR device.",
+    "acInstruction": "Set your air conditioner to the state you want (for example, on) and press the power button on its original remote, pointing at the IR device.",
+    "detected": "Detected: {{protocol}}", "acStateOk": "Your AC is supported. This single capture lets you control power, mode, temperature, fan and swing.",
+    "acRawInfo": "This model doesn't support automatic mode. We'll set up each button separately.",
+    "summaryTitle": "All set", "summaryText": "These buttons are configured:", "finish": "Finish and test",
+    "notLearned": "Not set up", "learned": "Set up", "customName": "Button name",
+    "learnedButtons": "Configured buttons"
+  },
+  "actions": {
+    "power_on": "Power on", "power_off": "Power off", "ch_up": "Channel +", "ch_down": "Channel −", "vol_up": "Volume +",
+    "vol_down": "Volume −", "mute": "Mute", "input": "Input", "mode_cool": "Cool", "mode_heat": "Heat",
+    "mode_dry": "Dry", "mode_fan": "Fan", "temp_up": "Temperature +", "temp_down": "Temperature −",
+    "fan_speed": "Fan speed", "swing": "Swing"
+  },
+  "remote": {
+    "channel": "Channel", "volume": "Volume", "mode": "Mode", "fan": "Fan", "swing": "Swing",
+    "on": "On", "off": "Off", "custom": "Custom buttons", "offlineHint": "The IR device is offline. Buttons are disabled.",
+    "fanAuto": "Auto", "fanLow": "Low", "fanMedium": "Medium", "fanHigh": "High", "swingOn": "On", "swingOff": "Off"
+  },
+  "edit": {
+    "title": "Edit remote", "rename": "Name", "relearn": "Set up again", "addCustom": "Add custom button",
+    "deleteControl": "Delete remote", "deleteConfirm": "Delete this remote and its buttons?", "actions": "Buttons",
+    "customPlaceholder": "e.g. Netflix", "removeButton": "Remove"
+  },
+  "settings": {
+    "title": "Settings", "profile": "Profile", "security": "Security", "changePassword": "Change password",
+    "saved": "Saved", "passwordChanged": "Password updated", "install": "Install the app",
+    "installText": "Add it to your home screen to open it instantly.",
+    "installIos": "In Safari, tap Share and then \"Add to Home Screen\".", "installButton": "Install",
+    "notNow": "Not now"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.", "network_error": "Can't reach the server.",
+    "invalid_name": "Enter a valid name.", "invalid_email": "Enter a valid email.",
+    "weak_password": "Password must be at least 8 characters.", "email_taken": "That email is already registered.",
+    "invalid_credentials": "Wrong email or password.", "too_many_attempts": "Too many attempts. Wait a few minutes.",
+    "invalid_reset_token": "The link is invalid or has expired.", "device_not_found": "We couldn't find a device with that ID.",
+    "device_offline": "The IR device is offline.", "device_busy": "Someone else is setting up this device. Try again in a moment.",
+    "mqtt_unavailable": "Couldn't reach the device. Please try again.", "action_not_learned": "That button isn't set up yet.",
+    "nothing_learned": "Set up at least one button before finishing.", "control_not_found": "We couldn't find that remote.",
+    "invalid_label": "Enter a name for the button."
+  }
+}

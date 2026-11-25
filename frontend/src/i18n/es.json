@@ -1,0 +1,83 @@
+{
+  "app": { "name": "IR Remote", "tagline": "Controla tu TV y tu aire acondicionado desde el celular." },
+  "common": {
+    "back": "Atrás", "next": "Siguiente", "skip": "Omitir", "cancel": "Cancelar", "save": "Guardar",
+    "delete": "Eliminar", "retry": "Reintentar", "done": "Listo", "loading": "Cargando…", "close": "Cerrar",
+    "or": "o", "language": "Idioma", "spanish": "Español", "english": "English"
+  },
+  "auth": {
+    "welcomeTitle": "Bienvenido", "signIn": "Iniciar sesión", "signUp": "Crear cuenta", "signOut": "Cerrar sesión",
+    "name": "Nombre", "email": "Correo electrónico", "password": "Contraseña", "confirmPassword": "Confirmar contraseña",
+    "newPassword": "Nueva contraseña", "currentPassword": "Contraseña actual",
+    "noAccount": "¿No tienes cuenta?", "haveAccount": "¿Ya tienes cuenta?", "forgot": "¿Olvidaste tu contraseña?",
+    "signInTitle": "Inicia sesión", "signUpTitle": "Crea tu cuenta",
+    "forgotTitle": "Recupera tu contraseña", "forgotHelp": "Escribe tu correo y te enviaremos un enlace para elegir una nueva contraseña.",
+    "sendLink": "Enviar enlace", "linkSent": "Si el correo existe, te enviamos un enlace. Revisa tu bandeja de entrada.",
+    "resetTitle": "Nueva contraseña", "resetSubmit": "Cambiar contraseña", "backToSignIn": "Volver a iniciar sesión",
+    "passwordMin": "Mínimo 8 caracteres", "passwordsDontMatch": "Las contraseñas no coinciden"
+  },
+  "home": {
+    "title": "Mis dispositivos", "hello": "Hola, {{name}}", "add": "Agregar dispositivo",
+    "emptyTitle": "Aún no tienes controles", "emptyText": "Agrega tu primer TV o aire acondicionado para empezar.",
+    "draft": "Configuración incompleta", "continueSetup": "Continuar configuración", "offline": "Sin conexión", "online": "En línea"
+  },
+  "status": {
+    "online": "Dispositivo en línea", "offline": "Dispositivo sin conexión", "checking": "Verificando…",
+    "allOnline": "Todo en línea", "someOffline": "{{n}} sin conexión", "noneOnline": "Sin conexión",
+    "noNetwork": "Sin internet. Revisa tu conexión.", "since": "desde {{time}}", "noDevices": "Sin dispositivos"
+  },
+  "add": {
+    "title": "Nuevo dispositivo", "step": "Paso {{n}} de 3",
+    "idTitle": "ID del dispositivo IR", "idHelp": "Escribe el ID impreso en tu dispositivo IR.",
+    "idLabel": "ID del dispositivo", "idPlaceholder": "Ej. IR-4F2A91", "idCheck": "Verificar",
+    "typeTitle": "¿Qué quieres controlar?", "tv": "Televisión", "ac": "Aire acondicionado",
+    "nameTitle": "Ponle un nombre", "nameLabel": "Nombre", "namePlaceholder": "Ej. Aire de la recámara",
+    "suggestions": "Sugerencias", "create": "Crear y configurar"
+  },
+  "setup": {
+    "title": "Configuración", "progress": "{{n}} de {{total}}", "start": "Comenzar captura",
+    "listening": "Esperando la señal…", "listeningHelp": "Apunta tu control remoto original al dispositivo IR y presiona el botón.",
+    "success": "¡Señal capturada!", "failed": "No se recibió ninguna señal", "tryAgain": "Intentar de nuevo",
+    "instruction": "Presiona el botón «{{action}}» de tu control remoto original, apuntando al dispositivo IR.",
+    "acInstruction": "Pon tu aire acondicionado en el estado que quieras (por ejemplo, encendido) y presiona el botón de encendido de su control remoto original, apuntando al dispositivo IR.",
+    "detected": "Detectado: {{protocol}}", "acStateOk": "Tu aire es compatible. Con esta sola captura puedes controlar encendido, modo, temperatura, ventilador y oscilación.",
+    "acRawInfo": "Este modelo no es compatible con el modo automático. Configuraremos cada botón por separado.",
+    "summaryTitle": "Todo listo", "summaryText": "Estos botones están configurados:", "finish": "Finalizar y probar",
+    "notLearned": "Sin configurar", "learned": "Configurado", "customName": "Nombre del botón",
+    "learnedButtons": "Botones configurados"
+  },
+  "actions": {
+    "power_on": "Encender", "power_off": "Apagar", "ch_up": "Canal +", "ch_down": "Canal −", "vol_up": "Volumen +",
+    "vol_down": "Volumen −", "mute": "Silencio", "input": "Entrada", "mode_cool": "Frío", "mode_heat": "Calor",
+    "mode_dry": "Deshumidificar", "mode_fan": "Ventilador", "temp_up": "Temperatura +", "temp_down": "Temperatura −",
+    "fan_speed": "Velocidad", "swing": "Oscilación"
+  },
+  "remote": {
+    "channel": "Canal", "volume": "Volumen", "mode": "Modo", "fan": "Ventilador", "swing": "Oscilación",
+    "on": "Encendido", "off": "Apagado", "custom": "Botones personalizados", "offlineHint": "El dispositivo IR está sin conexión. Los botones están desactivados.",
+    "fanAuto": "Auto", "fanLow": "Baja", "fanMedium": "Media", "fanHigh": "Alta", "swingOn": "Activada", "swingOff": "Desactivada"
+  },
+  "edit": {
+    "title": "Editar control", "rename": "Nombre", "relearn": "Volver a configurar", "addCustom": "Agregar botón personalizado",
+    "deleteControl": "Eliminar control", "deleteConfirm": "¿Eliminar este control y sus botones?", "actions": "Botones",
+    "customPlaceholder": "Ej. Netflix", "removeButton": "Quitar"
+  },
+  "settings": {
+    "title": "Ajustes", "profile": "Perfil", "security": "Seguridad", "changePassword": "Cambiar contraseña",
+    "saved": "Guardado", "passwordChanged": "Contraseña actualizada", "install": "Instalar la app",
+    "installText": "Instálala en tu pantalla de inicio para abrirla al instante.",
+    "installIos": "En Safari, toca Compartir y luego «Agregar a pantalla de inicio».", "installButton": "Instalar",
+    "notNow": "Ahora no"
+  },
+  "errors": {
+    "generic": "Algo salió mal. Inténtalo de nuevo.", "network_error": "No hay conexión con el servidor.",
+    "invalid_name": "Escribe un nombre válido.", "invalid_email": "Escribe un correo válido.",
+    "weak_password": "La contraseña debe tener al menos 8 caracteres.", "email_taken": "Ese correo ya está registrado.",
+    "invalid_credentials": "Correo o contraseña incorrectos.", "too_many_attempts": "Demasiados intentos. Espera unos minutos.",
+    "invalid_reset_token": "El enlace no es válido o ya expiró.", "device_not_found": "No encontramos un dispositivo con ese ID.",
+    "device_offline": "El dispositivo IR está sin conexión.", "device_busy": "Otra persona está configurando este dispositivo. Intenta en un momento.",
+    "mqtt_unavailable": "No se pudo contactar al dispositivo. Intenta de nuevo.", "action_not_learned": "Ese botón aún no está configurado.",
+    "nothing_learned": "Configura al menos un botón antes de finalizar.", "control_not_found": "No encontramos ese control.",
+    "invalid_label": "Escribe un nombre para el botón."
+  }
+}
