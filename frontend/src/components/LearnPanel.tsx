@@ -29,7 +29,10 @@ export function LearnPanel({ control, actionName, label, onLearned, onClose, clo
   const alive = useRef(true);
   const poll = useRef<number>();
 
-  useEffect(() => () => { alive.current = false; clearTimeout(poll.current); }, []);
+  useEffect(() => {
+    alive.current = true; // must be re-armed: StrictMode (dev) mounts, unmounts, then remounts
+    return () => { alive.current = false; clearTimeout(poll.current); };
+  }, []);
   // reset when the step changes
   const run = useRef(0);
   useEffect(() => {
