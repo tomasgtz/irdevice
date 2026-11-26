@@ -23,12 +23,21 @@ const LOG = join(dirname(fileURLToPath(import.meta.url)), '..', 'backend', 'stor
 const TOPIC = `irdev/${code}/cmd`;
 
 async function status(online) {
-  if (!SECRET) return;
-  await fetch(`${API}/internal/device-status`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Webhook-Secret': SECRET },
-    body: JSON.stringify({ topic: `irdev/${code}/status`, payload: online ? 'online' : 'offline' }),
-  }).catch((e) => console.error('status webhook failed:', e.message));
+  if (!SECRET) {
+    console.error('!! No --secret given: the device will stay OFFLINE in the app. Pass --secret <webhook_secret from config.php>');
+    return;
+  }
+  try {
+    const res = await fetch(`${API}/internal/device-status`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Webhook-Secret': SECRET },
+      body: JSON.stringify({ topic: `irdev/${code}/status`, payload: online ? 'online' : 'offline' }),
+    });
+    if (res.ok) console.log(`-> status ${online ? 'online' : 'offline'} OK`);
+    else console.error(`!! status webhook failed: HTTP ${res.status} ${await res.text()}  (401 = --secret doesn't match webhook_secret)`);
+  } catch (e) {
+    console.error(`!! status webhook failed: ${e.message} (is the API running at ${API}?)`);
+  }
 }
 
 async function onCommand(p) {
