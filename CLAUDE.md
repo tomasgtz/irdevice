@@ -156,7 +156,8 @@ Lists exist in **three places** that must stay in sync: `backend/src/Actions.php
 - `Remote.tsx` defines `Btn`/`Rocker` as inner components (they remount each render; fine, but move them out if focus/animation issues appear).
 - Theme tokens are CSS variables in `styles.css`; accent `--primary`. Icons are inline SVG in `components/Icon.tsx` (add a path there for new icons; unknown names fall back to a star).
 - PWA: `public/sw.js` registers **only in production builds** (network-first navigation, cache-first static, never `/api`). Bump `CACHE` name to force refresh. After deploying, users may need to reopen the app twice.
-- Build: `cd frontend && npm run build` (runs `tsc --noEmit` first). Output `dist/` goes to `public_html/` together with `public/.htaccess` (SPA fallback excluding `/api/`).
+- Build: `cd frontend && npm run build` (runs `tsc --noEmit` first). Output `dist/` goes to the app folder on the host together with `public/.htaccess` (SPA fallback excluding `/api/`).
+- **Base path (subfolder hosting)**: the app is base-path aware. `VITE_BASE` in `frontend/.env.production` (currently `/irdevice/`; use `/` for a domain root) sets Vite `base`; the code uses `import.meta.env.BASE_URL` for the API base (`<base>api`), the router `basename` and the service-worker URL. `sw.js` derives its scope from its registration; `manifest.webmanifest` and `.htaccess` use relative paths. Never hardcode absolute `/...` URLs in the frontend; dev still runs at `/` with the `/api` proxy.
 
 ## 10. Backend notes
 
@@ -194,6 +195,8 @@ PHP needs `pdo_mysql`, `mbstring`, `curl`, `openssl`.
 ## 13. Deploy (shared hosting)
 
 Import `schema.sql`; upload `backend/*` to `public_html/api/` (keep `.htaccess`) + production `config.php`; upload `frontend/dist/*` and `frontend/public/.htaccess` to `public_html/`; create the EMQX deployment, API key, device credentials, and the rule `SELECT topic, payload FROM "irdev/+/status"` -> webhook `POST https://DOMAIN/api/internal/device-status` with header `X-Webhook-Secret` and body `{"topic":"${topic}","payload":"${payload}"}`; provision each physical device and flash its printed ID + API key.
+
+**Subfolder variant (current target, `https://mydomain.com/irdevice/`)**: frontend `dist/*` (incl. `.htaccess`) -> `public_html/irdevice/`; `backend/*` -> `public_html/irdevice/api/`. Don't upload `frontend/` source or the root `tools/`. `config.php`: `app_url 'https://mydomain.com/irdevice'`, `base_path '/irdevice/api'`, `cookie_path '/irdevice/api/auth'`. Webhook URL: `https://mydomain.com/irdevice/api/internal/device-status`; device `/device/learn` URL: `https://mydomain.com/irdevice/api/device/learn`. EMQX HTTP Server: method/body are set on the rule *action*, not the connector (an empty body sends the selected fields as JSON, which the backend accepts).
 
 ## 14. Status, history, known gaps
 

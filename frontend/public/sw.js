@@ -1,9 +1,12 @@
 // Minimal service worker: makes the app installable and the shell load instantly.
-// API calls are never cached.
-const CACHE = 'irremote-shell-v1';
+// API calls are never cached. Works at the domain root or in a subfolder (e.g. /irdevice/):
+// all paths are derived from the scope the worker was registered with.
+const CACHE = 'irremote-shell-v2';
+const SCOPE = new URL(self.registration.scope).pathname; // '/' or '/irdevice/'
+const API = SCOPE + 'api/';
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['/'])).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll([SCOPE])).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
@@ -17,11 +20,11 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   const url = new URL(req.url);
-  if (req.method !== 'GET' || url.origin !== location.origin || url.pathname.startsWith('/api/')) return;
+  if (req.method !== 'GET' || url.origin !== location.origin || url.pathname.startsWith(API)) return;
 
   if (req.mode === 'navigate') {
     // Network first, fall back to the cached shell when offline
-    e.respondWith(fetch(req).catch(() => caches.match('/')));
+    e.respondWith(fetch(req).catch(() => caches.match(SCOPE)));
     return;
   }
   // Static assets (hashed filenames): cache first

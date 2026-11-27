@@ -7,7 +7,7 @@ export class ApiError extends Error {
   }
 }
 
-const BASE = '/api';
+const BASE = `${import.meta.env.BASE_URL}api`; // '/api' in dev, '/irdevice/api' in the subfolder build
 let accessToken: string | null = null;
 let refreshing: Promise<boolean> | null = null;
 let onSessionLost: (() => void) | null = null;
